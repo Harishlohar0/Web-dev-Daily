@@ -1,0 +1,291 @@
+/* ================================
+   ROOT VARIABLES (DESIGN SYSTEM)
+================================ */
+:root {
+  /* Colors */
+  --bg-app: #f4f4f5;
+  --bg-panel: #ffffff;
+  --bg-canvas: #ffffff;
+  --bg-muted: #f1f5f9;
+
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+  --color-border: #e5e7eb;
+  --color-primary: #2563eb;
+  --color-primary-light: #dbeafe;
+
+  /* Sizes */
+  --panel-width-left: 240px;
+  --panel-width-right: 280px;
+  --canvas-width: 900px;
+  --canvas-height: 600px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  /* Spacing */
+  --space-xs: 6px;
+  --space-sm: 10px;
+  --space-md: 16px;
+  --space-lg: 24px;
+
+  /* Typography */
+  --font-base: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-sm: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+
+  /* Effects */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+/* ================================
+   GLOBAL RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-base);
+  background: var(--bg-app);
+  color: var(--color-text);
+  user-select: none;
+}
+
+
+/* ================================
+   APP LAYOUT
+================================ */
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+/* ================================
+   LEFT PANEL
+================================ */
+.left-panel {
+  width: var(--panel-width-left);
+  background: var(--bg-panel);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  gap: var(--space-lg);
+}
+
+.tools {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.tool-btn {
+  padding: 10px 12px;
+  font-size: var(--font-size-md);
+  background: var(--bg-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+}
+
+.tool-btn:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.layers-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--color-muted);
+}
+
+.layers-list {
+  list-style: none;
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.layers-list li {
+  padding: 8px 10px;
+  font-size: var(--font-size-sm);
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+}
+
+.layers-list li.active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.layer-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.layer-actions button {
+  flex: 1;
+  padding: 8px;
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-muted);
+  cursor: pointer;
+}
+
+
+/* ================================
+   CANVAS AREA
+================================ */
+.canvas-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#canvas {
+  width: var(--canvas-width);
+  height: var(--canvas-height);
+  background: var(--bg-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  position: relative;
+  box-shadow: var(--shadow-md);
+
+  /* subtle grid */
+  background-image:
+    linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+    linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+  background-size: 20px 20px;
+  overflow: hidden;
+}
+
+
+/* ================================
+   RIGHT PANEL
+================================ */
+.right-panel {
+  width: var(--panel-width-right);
+  background: var(--bg-panel);
+  border-left: 1px solid var(--color-border);
+  padding: var(--space-md);
+}
+
+.properties-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.property-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.property-group label {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+}
+
+.property-group input,
+.property-group textarea {
+  padding: 8px 10px;
+  font-size: var(--font-size-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+/* ================================
+   CIRCULAR COLOR PICKER
+================================ */
+#prop-color {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;            /* 👈 circle */
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  background: none;
+}
+
+/* remove default inner padding (important) */
+#prop-color::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 50%;
+}
+
+#prop-color::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+/* hover + focus effect */
+#prop-color:hover {
+  transform: scale(1.08);
+  border-color: var(--color-primary);
+}
+
+#prop-color:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.property-group textarea {
+  resize: none;
+  min-height: 60px;
+}
+
+
+/* ================================
+   CANVAS ELEMENTS
+================================ */
+.canvas-element {
+  position: absolute;
+  border-radius: var(--radius-sm);
+  cursor: grab;
+}
+
+.canvas-element.selected {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+
+/* ================================
+   RESIZE HANDLES
+================================ */
+.resize-handle {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border: 1px solid var(--color-primary);
+  position: absolute;
+}
+
+.resize-handle.nw { top: -4px; left: -4px; cursor: nwse-resize; }
+.resize-handle.ne { top: -4px; right: -4px; cursor: nesw-resize; }
+.resize-handle.sw { bottom: -4px; left: -4px; cursor: nesw-resize; }
+.resize-handle.se { bottom: -4px; right: -4px; cursor: nwse-resize; }

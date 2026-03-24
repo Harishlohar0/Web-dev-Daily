@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "image": "./kanbanimg.png",
+    "title": "Kanban Task Manager",
+    "description": "A kanban-style task management app to create todos, set priorities, and track progress. Built with a clean UI and smooth interactions.",
+    "tags": ["#HTML", "#CSS", "#JavaScript", "#Productivity"],
+    "repoLink": "https://github.com/harvixx/kanban-app",
+    "demoLink": "https://kanban-app-wheat.vercel.app/"
+  },
+  {
+    "id": 2,
+    "image": "./snakeimg.png",
+    "title": "Snake Game",
+    "description": "Classic snake game with keyboard controls, score tracking, and responsive gameplay using pure JavaScript.",
+    "tags": ["#JavaScript", "#Game", "#Canvas"],
+    "repoLink": "https://github.com/harvixx/Snake-game",
+    "demoLink": "https://project-1-snake-game.vercel.app/"
+  },
+  {
+    "id": 3,
+    "image": "./smythimg.png",
+    "title": "Personal Portfolio Website",
+    "description": "A modern and responsive personal portfolio showcasing projects, skills, and contact information.",
+    "tags": ["#HTML", "#CSS", "#Responsive Design"],
+    "repoLink": "https://github.com/harvixx/Smyth",
+    "demoLink": "https://harvixx.github.io/Smyth/"
+  },
+  {
+    "id": 4,
+    "image": "/images/macos-ui.png",
+    "title": "macOS Style UI",
+    "description": "A macOS-inspired UI built using React components and SCSS, featuring draggable windows and glassmorphism effects.",
+    "tags": ["React", "SCSS", "UI Design"],
+    "repoLink": "https://github.com/username/macos-ui",
+    "demoLink": "https://macos-ui-demo.vercel.app"
+  }
+]

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Figma Style Design Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- LEFT PANEL -->
+    <aside class="left-panel">
+
+      <!-- TOOLS -->
+      <div class="tools">
+        <button class="tool-btn" id="add-rectangle">
+          ▭ Rectangle
+        </button>
+        <button class="tool-btn" id="add-text">
+          T Text
+        </button>
+      </div>
+
+      <!-- LAYERS -->
+      <div class="layers-panel">
+        <h3 class="panel-title">Layers</h3>
+
+        <ul class="layers-list" id="layersList">
+          <!-- dynamically added -->
+        </ul>
+
+        <div class="layer-actions">
+          <button id="layer-up">⬆ Move Up</button>
+          <button id="layer-down">⬇ Move Down</button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- CANVAS -->
+    <main class="canvas-wrapper">
+      <div id="canvas">
+        <!-- elements added here -->
+      </div>
+    </main>
+
+    <!-- RIGHT PANEL -->
+    <aside class="right-panel">
+
+      <h3 class="panel-title">Properties</h3>
+
+      <div class="properties-panel">
+
+        <div class="property-group">
+          <label>Width</label>
+          <input type="number" id="prop-width" />
+        </div>
+
+        <div class="property-group">
+          <label>Height</label>
+          <input type="number" id="prop-height" />
+        </div>
+
+        <div class="property-group">
+          <label>Background Color</label>
+          <input type="color" id="prop-color" />
+        </div>
+
+        <div class="property-group">
+          <label>Text</label>
+          <textarea id="prop-text" placeholder="Select text element"></textarea>
+        </div>
+
+        <div class="property-group">
+          <label>Rotation (deg)</label>
+          <input type="number" id="prop-rotation" value="0" />
+        </div>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

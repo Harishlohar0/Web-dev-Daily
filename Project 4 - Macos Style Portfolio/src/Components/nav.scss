@@ -1,0 +1,27 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.left{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+
+}
+.nav-icon{
+        height: 21px;
+        aspect-ratio: 1/1;
+
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+.right{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}

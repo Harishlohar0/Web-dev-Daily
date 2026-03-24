@@ -1,0 +1,14 @@
+.note-window {
+  font-size: 1.1rem;
+}
+
+.note-window pre,
+.note-window code,
+.note-window span {
+  user-select: text;
+  background: transparent;
+}
+
+.note-window pre {
+  background-color:transparent !important;
+}

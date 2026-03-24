@@ -1,0 +1,12 @@
+.resume-window{
+    height: 100%;
+    overflow: auto;
+
+    embed{
+        height: 100%;
+        width: 100%;
+    }
+}
+.resume-window::-webkit-scrollbar{
+    display: none;
+}
